@@ -1,3 +1,5 @@
+import io.kotlintest.Description
+import io.kotlintest.Spec
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.FunSpec
 import java.time.Duration
@@ -5,9 +7,14 @@ import java.time.LocalDate
 
 class MovieTest : FunSpec() {
 
-    init {
+    private lateinit var rangDe : Movie
 
-        val rangDe = Movie("1234", "RangDe", LocalDate.of(2015, 12, 10) , "Comedy", "Director1", listOf("Aamir", "Kunal"), listOf("Sonal"), Duration.ofMinutes(200))
+    override fun beforeSpec(description: Description, spec: Spec) {
+        super.beforeSpec(description, spec)
+        rangDe = Movie("1234", "RangDe", LocalDate.of(2015, 12, 10) , "Comedy", "Director1", listOf("Aamir", "Kunal"), listOf("Sonal"), Duration.ofMinutes(200))
+    }
+
+    init {
 
         test("Should return true if release year of movie matches given year") {
             rangDe.isReleasedIn(2015) shouldBe true
