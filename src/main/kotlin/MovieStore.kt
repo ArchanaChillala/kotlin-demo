@@ -1,11 +1,11 @@
 class MovieStore (private val movieList: MutableList<Movie>) {
 
-    fun getMoviesByReleaseYear(year: Int) = movieList.filter { it.isReleasedIn(year) }
+    fun getMoviesByReleaseYear(year: Int) = movieList.filter { it isReleasedIn year }
 
-    fun getMoviesByDuration(minutes : Int) = movieList.filter { it.hasDuration(minutes) }
+    fun getMoviesByDuration(minutes : Int) = movieList.filter { it hasDuration minutes }
 
-    fun getMoviesByActor(actorName: String) = movieList.filter { it.hasActor(actorName) }
+    fun getMoviesByActor(actorName: String) = movieList.filter { it hasActor actorName }
 
-    fun getMoviesByActress(actressName: String) = movieList.filter { it.hasActress(actressName) }
+    fun getMoviesByActress(actressName: String) = movieList.filter { it hasActress actressName }
 }
 
