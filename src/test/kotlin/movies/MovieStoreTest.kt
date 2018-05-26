@@ -1,3 +1,5 @@
+package movies
+
 import io.kotlintest.Description
 import io.kotlintest.Spec
 import io.kotlintest.shouldBe
@@ -14,8 +16,8 @@ class MovieStoreTest : FunSpec() {
     override fun beforeSpec(description: Description, spec: Spec) {
         super.beforeSpec(description, spec)
 
-        rangDe = Movie("1234", "RangDe", LocalDate.of(2015, 12, 10) , "Comedy", "Director1", listOf("Aamir", "Kunal"), listOf("Sonal"), Duration.ofMinutes(200))
-        zootopia = Movie("5678", "Zootopia", LocalDate.of(2018, 12, 10) , "Disney", "Director1", listOf("Amir", "Kunal"), listOf("Julia"), Duration.ofMinutes(120))
+        rangDe = Movie("1234", "RangDe", LocalDate.of(2015, 12, 10), "Comedy", "Director1", listOf("Aamir", "Kunal"), listOf("Sonal"), Duration.ofMinutes(200))
+        zootopia = Movie("5678", "Zootopia", LocalDate.of(2018, 12, 10), "Disney", "Director1", listOf("Amir", "Kunal"), listOf("Julia"), Duration.ofMinutes(120))
         movieStore = MovieStore(mutableListOf(rangDe, zootopia))
     }
 

@@ -1,3 +1,5 @@
+package hello
+
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.FunSpec
 

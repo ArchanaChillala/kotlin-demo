@@ -1,3 +1,5 @@
+package movies
+
 import io.kotlintest.Description
 import io.kotlintest.Spec
 import io.kotlintest.shouldBe
@@ -11,7 +13,7 @@ class MovieTest : FunSpec() {
 
     override fun beforeSpec(description: Description, spec: Spec) {
         super.beforeSpec(description, spec)
-        rangDe = Movie("1234", "RangDe", LocalDate.of(2015, 12, 10) , "Comedy", "Director1", listOf("Aamir", "Kunal"), listOf("Sonal"), Duration.ofMinutes(200))
+        rangDe = Movie("1234", "RangDe", LocalDate.of(2015, 12, 10), "Comedy", "Director1", listOf("Aamir", "Kunal"), listOf("Sonal"), Duration.ofMinutes(200))
     }
 
     init {
