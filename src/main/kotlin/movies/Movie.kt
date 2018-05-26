@@ -3,15 +3,15 @@ package movies
 import java.time.Duration
 import java.time.LocalDate
 
-data class Movie (
-        private val imdbID: String,
-        private val title: String,
-        private val releaseDate: LocalDate,
-        private val genres: String,
-        private val director: String,
-        private val actors: List<String>,
-        private val actresses: List<String>,
-        private val duration: Duration ) {
+data class Movie(
+        internal var imdbID: String = "",
+        internal var title: String = "",
+        internal var releaseDate: LocalDate = LocalDate.now(),
+        internal var genre: String = "",
+        private val director: String = "",
+        private val actors: List<String> = listOf(),
+        private val actresses: List<String> = listOf(),
+        private val duration: Duration = Duration.ofMinutes(120)) {
 
     infix fun isReleasedIn(year: Int) = releaseDate.year == year
 

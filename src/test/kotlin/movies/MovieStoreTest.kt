@@ -9,8 +9,8 @@ import java.time.LocalDate
 
 class MovieStoreTest : FunSpec() {
 
-    private lateinit var rangDe : Movie
-    private lateinit var zootopia : Movie
+    private lateinit var rangDe: Movie
+    private lateinit var zootopia: Movie
     private lateinit var movieStore: MovieStore
 
     override fun beforeSpec(description: Description, spec: Spec) {
