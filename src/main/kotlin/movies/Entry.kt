@@ -11,4 +11,5 @@ fun main(args: Array<String>) {
     val movieStore = MovieStore(mutableListOf(rangDe, inferno))
 
     println(movieStore.getMoviesByActor("Amir"))
+    println(movieStore.findAllByReleaseDateIn(LocalDate.of(2016, 12, 12)..LocalDate.of(2019, 10, 15)))
 }
