@@ -36,5 +36,12 @@ class MovieStoreTest : FunSpec() {
         test("Should return movies based on actress' name") {
             movieStore.getMoviesByActress("Julia") shouldBe listOf(zootopia)
         }
+
+        test("Should return all movies released between a given date range") {
+            movieStore.findAllByReleaseDateIn(LocalDate.of(2014, 12, 12)..LocalDate.of(2019, 10, 15)) shouldBe listOf(rangDe, zootopia)
+            movieStore.findAllByReleaseDateIn(LocalDate.of(2016, 12, 12)..LocalDate.of(2019, 10, 15)) shouldBe listOf(zootopia)
+            movieStore.findAllByReleaseDateIn(LocalDate.of(2014, 12, 12)..LocalDate.of(2016, 10, 15)) shouldBe listOf(rangDe)
+            movieStore.findAllByReleaseDateIn(LocalDate.of(2012, 12, 12)..LocalDate.of(2014, 10, 15)) shouldBe listOf()
+        }
     }
 }

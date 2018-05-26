@@ -39,5 +39,13 @@ class MovieTest : FunSpec() {
         test("Should return true if given actresses' name matches any of the movie's actresses list") {
             rangDe.hasActress("Sonal") shouldBe true
         }
+
+        test("Should return true if movie is released between the given date range") {
+            rangDe.isReleasedBetween(LocalDate.of(2014, 12, 15)..LocalDate.of(2016, 10, 10)) shouldBe true
+        }
+
+        test("Should return false if movie is not released between the given date range") {
+            rangDe.isReleasedBetween(LocalDate.of(2016, 12, 15)..LocalDate.of(2018, 10, 10)) shouldBe false
+        }
     }
 }

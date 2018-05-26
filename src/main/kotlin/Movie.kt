@@ -18,4 +18,6 @@ data class Movie (
     infix fun hasActor(actorName: String) = actors.contains(actorName)
 
     infix fun hasActress(actressName: String) = actresses.contains(actressName)
+
+    infix fun isReleasedBetween(releaseDateRange: ClosedRange<LocalDate>) = releaseDate in releaseDateRange
 }
